@@ -1,18 +1,19 @@
 'use client';
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 import { Box, Grid, Typography } from '@mui/material';
 import { AppDispatch, RootState } from '../../redux/store';
 import { fetchMovieDetails, fetchSimilarMovies } from '../../redux/movieSlice';
-import Header from '../Header/page';
+import Header from '../Header/Header';
 import styles from './MovieDetails.module.css';
 
 interface MovieDetailsProps {
   movieId: string;
 }
 
-const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId }) => {
+function MovieDetails({ movieId }: MovieDetailsProps) {
   const dispatch = useDispatch<AppDispatch>();
   const { selectedMovie, similarMovies } = useSelector((state: RootState) => state.movie);
 
@@ -50,8 +51,9 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId }) => {
                 <Typography className={`${styles.movieText} ${styles.movieOverview}`} variant="body1" paragraph>
                   {selectedMovie.overview}
                 </Typography>
+                <span>Rating:</span>
                 <Typography className={styles.movieText} variant="body2">
-                  Rating: {selectedMovie.vote_average}
+                  {selectedMovie.vote_average}
                 </Typography>
               </Grid>
             </Grid>
@@ -59,8 +61,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId }) => {
               Similar Movies
             </Typography>
             <Grid container spacing={2}>
-              {!similarMovies.length ?
-                <Typography className={styles.noResults} variant='h5'>No results found</Typography>
+              {!similarMovies.length
+                ? <Typography className={styles.noResults} variant="h5">No results found</Typography>
                 : similarMovies.map((movie) => (
                   <Grid item xs={6} sm={4} md={3} key={movie.id}>
                     <Box className={styles.similarMovieBox}>
@@ -83,6 +85,6 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId }) => {
       </Box>
     </div>
   );
-};
+}
 
 export default MovieDetails;

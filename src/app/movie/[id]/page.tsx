@@ -1,17 +1,21 @@
 'use client';
 
+import React from 'react';
 import { useParams } from 'next/navigation';
-import MovieDetails from '@/app/components/MovieDetails';
+import MovieDetails from '../../components/MovieDetails/MovieDetails';
 
-interface MoviePageProps {
-    id: string;
+function MoviePage() {
+    const { id } = useParams();
+
+    if (!id) {
+        return <div>Loading...</div>;
+    }
+
+    return (
+        <div>
+            <MovieDetails movieId={id as string} />
+        </div>
+    );
 }
-
-const MoviePage: React.FC<MoviePageProps> = () => {
-    const params = useParams();
-    const { id } = params;
-
-    return (<MovieDetails movieId={id as string} />);
-};
 
 export default MoviePage;

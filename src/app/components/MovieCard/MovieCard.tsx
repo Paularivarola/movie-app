@@ -4,14 +4,14 @@ import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, Typography } from '@mui/material';
-import styles from './MovieCard.module.css';
 import { Movie } from '@/app/redux/movieSlice';
+import styles from './MovieCard.module.css';
 
 interface MovieCardProps {
   movie: Movie;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+function MovieCard({ movie }: MovieCardProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -34,6 +34,6 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       </CardContent>
     </Card>
   );
-};
+}
 
 export default MovieCard;
