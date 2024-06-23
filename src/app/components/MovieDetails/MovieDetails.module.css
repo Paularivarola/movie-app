@@ -1,0 +1,86 @@
+.container {
+    padding: 2rem;
+}
+
+.movieGrid {
+    background-color: #050507;
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid #D8D2CB;
+    margin-bottom: 2rem;
+}
+
+.posterImage {
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+}
+
+.movieTitle {
+    color: #D8D2CB;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.movieText {
+    color: #D8D2CB;
+}
+
+.movieOverview {
+    opacity: 0.8;
+}
+
+.similarMoviesTitle {
+    text-align: center;
+    color: #D8D2CB;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.noResults {
+    padding: 2rem 0;
+    opacity: 0.8;
+    width: 100%;
+    text-align: center;
+    color: #D8D2CB;
+    font-weight: normal;
+}
+
+.similarMovieBox {
+    background-color: #050507;
+    border-radius: 2rem;
+    border: 1px solid #D8D2CB;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.similarPosterImage {
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 300px) {
+    .container {
+        padding: 2rem;
+    }
+
+    .movieTitle {
+        font-size: 2.5rem;
+    }
+
+    .movieGrid {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .container {
+        padding: 6rem;
+    }
+
+    .movieTitle {
+        font-size: 3rem;
+    }
+}

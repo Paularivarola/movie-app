@@ -1,0 +1,26 @@
+.main {
+    padding: 1rem;
+}
+
+.heading {
+    font-weight: 800;
+    padding-top: 3rem;
+}
+
+.scrollContainer {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    gap: 1rem;
+    padding: 16px 0;
+}
+
+.movieList {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.movieItem {
+    flex: 0 0 auto;
+}
